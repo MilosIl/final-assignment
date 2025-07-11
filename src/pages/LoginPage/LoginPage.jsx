@@ -6,9 +6,7 @@ const LoginPage = () => {
       <h1 className="text-3xl font-bold mb-6">
         Welcome to <span className="text-teal-500 ">MyStore</span>{" "}
       </h1>
-      <p className="text-lg mb-12 ">
-        Place where you find everything that you need
-      </p>
+      <p className="text-lg mb-12 ">Place where you can find everything</p>
       <LoginFormContainer />
     </div>
   );

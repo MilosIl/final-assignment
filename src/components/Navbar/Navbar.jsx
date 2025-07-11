@@ -9,7 +9,7 @@ import { NavbarItem } from "./NavbarItem";
 import { Link } from "react-router";
 import { Avatar } from "../Avatar";
 import { ToggleThemeContainer } from "@/containers";
-
+import logo from "@/assets/logo.png";
 const Navbar = ({
   mobileMenuClick,
   avatarClick,
@@ -22,8 +22,11 @@ const Navbar = ({
 }) => {
   return (
     <nav className="flex items-center justify-between w-full px-4 py-2">
-      <Link to={"/"} className="font-bold text-xl">
-        LOGO
+      <Link
+        to={"/"}
+        className="font-bold text-xl w-16 overflow-hidden rounded-full block"
+      >
+        <img src={logo} alt="logo" className="w-full h-full object-cover" />
       </Link>
 
       {/* Mobile Menu Button */}
@@ -33,7 +36,7 @@ const Navbar = ({
       >
         <IconHamburgerMenu />
         {isOpenMenu && (
-          <ul className="absolute right-0 top-8 bg-white shadow-lg rounded-lg p-4 flex flex-col gap-2 min-w-48 z-50">
+          <ul className="absolute right-0 top-8 dark:bg-slate-800 bg-sky-50 shadow-lg rounded-lg p-4 flex flex-col gap-2 min-w-48 z-50">
             <NavbarItem icon={<IconHome />} to={"/"}>
               Home
             </NavbarItem>
@@ -66,7 +69,7 @@ const Navbar = ({
           </div>
 
           {isDropdownOpen && (
-            <ul className="absolute right-0 top-12 bg-slate-300 shadow-lg rounded-lg p-3 gap-4.5 flex flex-col min-w-40 z-50">
+            <ul className="absolute right-0 top-12 dark:bg-slate-800 bg-sky-50 shadow-lg rounded-lg p-3 gap-4.5 flex flex-col min-w-40 z-50 text-sky-100">
               <NavbarItem icon={<IconUser />} to={`/profile/${userId}`}>
                 My Profile
               </NavbarItem>
