@@ -1,7 +1,12 @@
-import { QueryClientWrapper } from "./QueryClientProvider";
+import { QueryProvider } from "./QueryProvider";
+import { ReduxProvider } from "./ReduxProvider";
 
 const ProviderWrapper = ({ children }) => {
-  return <QueryClientWrapper>{children}</QueryClientWrapper>;
+  return (
+    <ReduxProvider>
+      <QueryProvider>{children}</QueryProvider>;
+    </ReduxProvider>
+  );
 };
 
 export { ProviderWrapper };

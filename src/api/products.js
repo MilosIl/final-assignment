@@ -19,7 +19,7 @@ const getProductById = async (id) => {
       .then((response) => response.data);
     return data;
   } catch (error) {
-    console.log("error fetching all products", error);
+    console.log("error fetching product", error);
     throw new Error(error);
   }
 };

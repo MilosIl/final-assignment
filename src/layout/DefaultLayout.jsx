@@ -1,10 +1,11 @@
-import { Footer, Navbar } from "@/components";
+import { Footer } from "@/components";
+import { NavbarContainer } from "@/containers/NavbarContainer";
 import { Outlet } from "react-router";
 
 const DefaultLayout = () => {
   return (
     <>
-      <Navbar />
+      <NavbarContainer />
       <main className="container mx-auto p-4">
         <Outlet />
       </main>
