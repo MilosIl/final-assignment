@@ -1,10 +1,14 @@
 import { Link } from "react-router";
 
-const NavbarItem = ({ to, children, icon }) => {
+const NavbarItem = ({ to, children, icon, onClick }) => {
   return (
-    <li className="flex items-center gap-3 justify-start">
+    <li className="flex items-center gap-3 justify-start" onClick={onClick}>
       {icon && <span>{icon}</span>}
-      <Link to={to}>{children}</Link>
+      {to ? (
+        <Link to={to}>{children}</Link>
+      ) : (
+        <span className="cursor-pointer">{children}</span>
+      )}
     </li>
   );
 };

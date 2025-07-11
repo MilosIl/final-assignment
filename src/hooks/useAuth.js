@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { login as loginRedux, logout as logoutRedux } from "@/store/AuthStore";
-import { login as apiLogin, logout as apiLogout } from "../api/auth";
+import { login as apiLogin, logout as apiLogout } from "@/api/auth";
 
 export const useAuth = () => {
   const dispatch = useDispatch();
-  const { user, isAuthenticated, loading, error } = useSelector(
+  const { user, isUserLoggedIn, loading, error } = useSelector(
     (state) => state.auth
   );
 
@@ -29,7 +29,7 @@ export const useAuth = () => {
 
   return {
     user,
-    isAuthenticated,
+    isUserLoggedIn,
     loading,
     error,
     login,

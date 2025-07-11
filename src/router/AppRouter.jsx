@@ -6,10 +6,15 @@ import {
   ProfilePage,
   ProductPage,
 } from "@/pages";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 const AppRouter = [
   {
-    element: <DefaultLayout />,
+    element: (
+      <ProtectedRoute>
+        <DefaultLayout />
+      </ProtectedRoute>
+    ),
     children: [
       { path: "/", element: <HomePage /> },
       {

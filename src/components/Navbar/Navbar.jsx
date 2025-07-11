@@ -7,6 +7,8 @@ import {
   IconArrowDown,
 } from "@/assets";
 import { NavbarItem } from "./NavbarItem";
+import { Link } from "react-router";
+import { Avatar } from "../Avatar/Avatar";
 
 const Navbar = ({
   mobileMenuClick,
@@ -14,10 +16,15 @@ const Navbar = ({
   isOpenMenu,
   isDropdownOpen,
   userId,
+  logout,
+  firstName,
+  lastName,
 }) => {
   return (
     <nav className="flex items-center justify-between w-full px-4 py-2">
-      <div className="font-bold text-xl">LOGO</div>
+      <Link to={"/"} className="font-bold text-xl">
+        LOGO
+      </Link>
 
       {/* Mobile Menu Button */}
       <div
@@ -30,11 +37,13 @@ const Navbar = ({
             <NavbarItem icon={<IconHome />} to={"/"}>
               Home
             </NavbarItem>
-            <NavbarItem icon={<IconUser />} to={"/profile"}>
+            <NavbarItem icon={<IconUser />} to={`/profile/${userId}`}>
               My Profile
             </NavbarItem>
             <NavbarItem icon={<ToggleDarkMode />}>Dark Mode</NavbarItem>
-            <NavbarItem icon={<IconLogout />}>Logout</NavbarItem>
+            <NavbarItem icon={<IconLogout />} onClick={logout}>
+              Logout
+            </NavbarItem>
           </ul>
         )}
       </div>
@@ -47,10 +56,7 @@ const Navbar = ({
             onClick={avatarClick}
             className="flex items-center gap-2 cursor-pointer hover:bg-gray-100 p-2 rounded"
           >
-            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
-              JD
-            </div>
-            <span>John Doe</span>
+            <Avatar firstName={firstName} lastName={lastName} />
             <IconArrowDown />
           </div>
 
@@ -59,7 +65,9 @@ const Navbar = ({
               <NavbarItem icon={<IconUser />} to={`/profile/${userId}`}>
                 My Profile
               </NavbarItem>
-              <NavbarItem icon={<IconLogout />}>Logout</NavbarItem>
+              <NavbarItem icon={<IconLogout />} onClick={logout}>
+                Logout
+              </NavbarItem>
             </ul>
           )}
         </div>

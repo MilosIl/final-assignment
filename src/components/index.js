@@ -6,3 +6,5 @@ export * from "./Footer";
 export * from "./Navbar";
 export * from "./ToggleDarkMode";
 export * from "./LoginForm";
+export * from "./ProfileCard";
+export * from "./Avatar";

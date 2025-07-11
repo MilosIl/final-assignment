@@ -1,10 +1,11 @@
 import { Navbar } from "@/components";
+import { useAuth } from "@/hooks/useAuth";
 import { useState } from "react";
 
 const NavbarContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const { user, logout } = useAuth();
   const handleMobileMenuClick = () => {
     setIsOpen(!isOpen);
   };
@@ -18,7 +19,10 @@ const NavbarContainer = () => {
       avatarClick={handleAvatarClick}
       isOpenMenu={isOpen}
       isDropdownOpen={isDropdownOpen}
-      userId={1}
+      userId={user?.id}
+      logout={logout}
+      firstName={user?.firstName}
+      lastName={user?.lastName}
     />
   );
 };
