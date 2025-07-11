@@ -4,7 +4,7 @@ export * from "./RatingReview";
 export * from "./Loader";
 export * from "./Footer";
 export * from "./Navbar";
-export * from "./ToggleDarkMode";
+export * from "./ToggleTheme";
 export * from "./LoginForm";
 export * from "./ProfileCard";
 export * from "./Avatar";

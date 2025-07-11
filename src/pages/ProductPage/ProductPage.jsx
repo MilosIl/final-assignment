@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components";
+import { Button, ProductCard } from "@/components";
 import { useProductById } from "@/services";
 import { Link, useParams } from "react-router";
 
@@ -8,9 +8,14 @@ const ProductPage = () => {
 
   return (
     <>
-      <Link to="/" className="text-blue-500 underline mb-4">
-        Back to Home
-      </Link>
+      <Button>
+        <Link
+          to="/"
+          className=" text-slate-800 underline mb-4 underline-offset-2"
+        >
+          Back to Home
+        </Link>
+      </Button>
       <div className="mx-auto h-screen flex items-center justify-center">
         <ProductCard {...data} />
       </div>

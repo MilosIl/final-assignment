@@ -6,7 +6,7 @@ const Avatar = ({ firstName, lastName }) => {
   const initials = `${firstInitial}${lastInitial}`;
 
   return (
-    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
+    <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white">
       {initials}
     </div>
   );

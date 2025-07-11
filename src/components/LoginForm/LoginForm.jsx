@@ -2,8 +2,11 @@ import { Button, Input } from "../ui";
 
 const LoginForm = ({ onSubmit, register, errors, loading, error }) => {
   return (
-    <div>
-      <form onSubmit={onSubmit}>
+    <>
+      <form
+        onSubmit={onSubmit}
+        className="flex flex-col gap-5 bg-sky-50 p-6 rounded-lg shadow-md"
+      >
         <Input
           {...register("username")}
           label="Username"
@@ -22,7 +25,7 @@ const LoginForm = ({ onSubmit, register, errors, loading, error }) => {
           {loading ? "Logging in..." : "Login"}
         </Button>
       </form>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-import { ToggleDarkMode } from "../ToggleDarkMode";
 import {
   IconHamburgerMenu,
   IconHome,
@@ -8,7 +7,8 @@ import {
 } from "@/assets";
 import { NavbarItem } from "./NavbarItem";
 import { Link } from "react-router";
-import { Avatar } from "../Avatar/Avatar";
+import { Avatar } from "../Avatar";
+import { ToggleThemeContainer } from "@/containers";
 
 const Navbar = ({
   mobileMenuClick,
@@ -40,7 +40,9 @@ const Navbar = ({
             <NavbarItem icon={<IconUser />} to={`/profile/${userId}`}>
               My Profile
             </NavbarItem>
-            <NavbarItem icon={<ToggleDarkMode />}>Dark Mode</NavbarItem>
+            <NavbarItem icon={<ToggleThemeContainer />}>
+              Change Theme
+            </NavbarItem>
             <NavbarItem icon={<IconLogout />} onClick={logout}>
               Logout
             </NavbarItem>
@@ -50,13 +52,16 @@ const Navbar = ({
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-4">
-        <ToggleDarkMode />
+        <ToggleThemeContainer />
         <div className="relative">
           <div
             onClick={avatarClick}
             className="flex items-center gap-2 cursor-pointer hover:bg-gray-100 p-2 rounded"
           >
             <Avatar firstName={firstName} lastName={lastName} />
+            <span className="text-sm font-semibold">
+              {firstName} {lastName}
+            </span>
             <IconArrowDown />
           </div>
 

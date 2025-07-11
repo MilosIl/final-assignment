@@ -1,18 +1,22 @@
-const Input = (
-  { onChange, placeholder, type = "text", label, id, error, ...props },
-  ref
-) => {
+const Input = ({
+  onChange,
+  placeholder,
+  type = "text",
+  label,
+  id,
+  error,
+  ...props
+}) => {
   return (
     <>
       <label htmlFor={id}>
-        <span>{label}</span>
+        <span className="mb-2 inline-block">{label}</span>
         <input
           id={id}
-          ref={ref}
           onChange={onChange}
           type={type}
           placeholder={placeholder}
-          className={`w-full p-2 border rounded [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
+          className={`w-full p-2 border border-teal-500 rounded [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
             error ? "border-red-500" : "border-gray-300"
           }`}
           {...props}

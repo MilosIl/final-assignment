@@ -5,6 +5,7 @@ import { useState } from "react";
 const NavbarContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const { user, logout } = useAuth();
   const handleMobileMenuClick = () => {
     setIsOpen(!isOpen);
