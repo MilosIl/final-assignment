@@ -2,3 +2,6 @@ export * from "./ui";
 export * from "./ProductCard";
 export * from "./RatingReview";
 export * from "./Loader";
+export * from "./Footer";
+export * from "./Navbar";
+export * from "./ToggleDarkMode";

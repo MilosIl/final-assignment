@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
 .card {
-  @apply p-4 border rounded-md shadow-md max-w-3xl m-1;
+  @apply p-2 md:p-4 border rounded-md shadow-md max-w-2xl m-1 bg-blue-100 border-blue-200  transition-all duration-250 ease-in-out;
+}
+.card:hover {
+  @apply bg-blue-200 border-blue-300 shadow-blue-300;
 }

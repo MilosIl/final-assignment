@@ -1,22 +1,36 @@
-import { HomePage, LoginPage } from "@/pages";
-import { NotFound, ProfilePage, ProductPage } from "@/pages";
+import { DefaultLayout, LoginPageLayout } from "@/layout";
+import {
+  HomePage,
+  LoginPage,
+  NotFound,
+  ProfilePage,
+  ProductPage,
+} from "@/pages";
 
 const AppRouter = [
   {
-    path: "/",
-    element: <HomePage />,
+    element: <DefaultLayout />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      {
+        path: "/products/:id",
+        element: <ProductPage />,
+      },
+      {
+        path: "/profile/:id",
+        element: <ProfilePage />,
+      },
+    ],
   },
+
   {
-    path: "/products/:id",
-    element: <ProductPage />,
-  },
-  {
-    path: "/profile/:id",
-    element: <ProfilePage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
+    element: <LoginPageLayout />,
+    children: [
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+    ],
   },
   {
     path: "*",

@@ -5,3 +5,5 @@ export * from "./IconSearch";
 export * from "./IconSun";
 export * from "./IconUser";
 export * from "./IconStar";
+export * from "./IconLogout";
+export * from "./IconArrowDown";

@@ -5,7 +5,7 @@ const HomePage = () => {
   const { data } = useAllProducts();
 
   return (
-    <div className="flex gap-4  items-center flex-wrap">
+    <div className="flex gap-4 justify-center items-center flex-wrap">
       {data?.products?.map((product) => {
         return (
           <ProductCardThumbnail
