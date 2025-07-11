@@ -1,2 +1,2 @@
-export * from './QueryClientWrapper';
-export * from './queryClient';
+export * from "./QueryClientWrapper";
+export * from "./queryClient";

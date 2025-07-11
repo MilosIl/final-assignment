@@ -1,3 +1,3 @@
-export * from './baseInstance';
-export * from './auth';
-export * from './products';
+export * from "./baseInstance";
+export * from "./auth";
+export * from "./products";

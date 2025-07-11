@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from "react";
 
 const Select = forwardRef(
   (
@@ -13,11 +13,11 @@ const Select = forwardRef(
           onChange={onChange}
           name={name}
           disabled={disabled}
-          className={`w-full p-2 border rounded ${error ? 'border-red-500' : 'border-gray-300'}`}
+          className={`w-full p-2 border rounded ${error ? "border-red-500" : "border-gray-300"}`}
           {...props}
         >
           {placeholder && (
-            <option value='' disabled>
+            <option value="" disabled>
               {placeholder}
             </option>
           )}
@@ -27,7 +27,7 @@ const Select = forwardRef(
             </option>
           ))}
         </select>
-        {error && <span className='text-red-500 text-sm'>{error}</span>}
+        {error && <span className="text-red-500 text-sm">{error}</span>}
       </div>
     );
   }

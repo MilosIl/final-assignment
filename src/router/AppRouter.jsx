@@ -1,25 +1,25 @@
-import { HomePage, LoginPage } from '@/pages';
-import { NotFound, ProfilePage, ProductPage } from '@/pages';
+import { HomePage, LoginPage } from "@/pages";
+import { NotFound, ProfilePage, ProductPage } from "@/pages";
 
 const AppRouter = [
   {
-    path: '/',
+    path: "/",
     element: <HomePage />,
   },
   {
-    path: '/products/:id',
+    path: "/products/:id",
     element: <ProductPage />,
   },
   {
-    path: '/profile/:id',
+    path: "/profile/:id",
     element: <ProfilePage />,
   },
   {
-    path: '/login',
+    path: "/login",
     element: <LoginPage />,
   },
   {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   },
 ];

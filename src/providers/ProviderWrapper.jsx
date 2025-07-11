@@ -1,4 +1,4 @@
-import { QueryClientWrapper } from './QueryClientProvider';
+import { QueryClientWrapper } from "./QueryClientProvider";
 
 const ProviderWrapper = ({ children }) => {
   return <QueryClientWrapper>{children}</QueryClientWrapper>;
