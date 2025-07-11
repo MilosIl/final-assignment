@@ -1,6 +1,5 @@
 import { HomePage, LoginPage } from '@/pages';
-import { ProductPage } from '@/pages/ProductPage/ProductPage';
-import { ProfilePage } from '@/pages/ProfilePage/ProfilePage';
+import { NotFound, ProfilePage, ProductPage } from '@/pages';
 
 const AppRouter = [
   {
@@ -8,7 +7,7 @@ const AppRouter = [
     element: <HomePage />,
   },
   {
-    path: '/products',
+    path: '/products/:id',
     element: <ProductPage />,
   },
   {
@@ -18,6 +17,10 @@ const AppRouter = [
   {
     path: '/login',
     element: <LoginPage />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ];
 
