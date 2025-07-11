@@ -4,7 +4,7 @@ import { ReduxProvider } from "./ReduxProvider";
 const ProviderWrapper = ({ children }) => {
   return (
     <ReduxProvider>
-      <QueryProvider>{children}</QueryProvider>;
+      <QueryProvider>{children}</QueryProvider>
     </ReduxProvider>
   );
 };
