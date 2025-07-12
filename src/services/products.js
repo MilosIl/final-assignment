@@ -1,5 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAllProducts, getProductById, getProductByTitle } from "@/api/";
+import {
+  getAllProducts,
+  getProductById,
+  getProductByTitle,
+  getProductsPagination,
+} from "@/api/";
 
 const useAllProducts = () => {
   return useQuery({
@@ -31,4 +36,19 @@ const useProductByTitle = (title) => {
   });
 };
 
-export { useAllProducts, useProductById, useProductByTitle };
+const useProductsPagination = (page, limit) => {
+  return useQuery({
+    queryKey: ["products", page, limit],
+    queryFn: () => getProductsPagination({ limit, skip: (page - 1) * limit }),
+    staleTime: 60 * 60 * 1000,
+    cacheTime: 24 * 60 * 60 * 1000,
+    keepPreviousData: true,
+  });
+};
+
+export {
+  useAllProducts,
+  useProductById,
+  useProductByTitle,
+  useProductsPagination,
+};

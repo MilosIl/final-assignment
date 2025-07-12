@@ -43,4 +43,21 @@ const getProductByTitle = async (title) => {
   }
 };
 
-export { getAllProducts, getProductById, getProductByTitle };
+const getProductsPagination = async ({ limit = 0, skip }) => {
+  try {
+    const data = await apiInstance
+      .get(`/products?limit=${limit}&skip=${skip}`)
+      .then((response) => response.data);
+    return data;
+  } catch (error) {
+    console.log("error fetching paginated products", error);
+    throw new Error(error);
+  }
+};
+
+export {
+  getAllProducts,
+  getProductById,
+  getProductByTitle,
+  getProductsPagination,
+};

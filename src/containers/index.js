@@ -3,3 +3,4 @@ export * from "./NavbarContainer";
 export * from "./ToggleThemeContainer";
 export * from "./ProductCardListContainer";
 export * from "./HomePageContainer";
+export * from "./PaginationContainer";

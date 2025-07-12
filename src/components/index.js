@@ -9,3 +9,4 @@ export * from "./LoginForm";
 export * from "./ProfileCard";
 export * from "./Avatar";
 export * from "./ProductCardList";
+export * from "./Pagination";

@@ -4,13 +4,13 @@ import { Outlet } from "react-router";
 
 const DefaultLayout = () => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <NavbarContainer />
-      <main className="container-wrapper ">
+      <main className="container-wrapper flex-grow">
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

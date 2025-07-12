@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const HomePageContainer = () => {
   const [search, setSearch] = useState("");
-  const debouncedSearch = useDebounce(search, 500);
+  const debouncedSearch = useDebounce(search, 350);
   const { data, isLoading } = useProductByTitle(debouncedSearch);
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
