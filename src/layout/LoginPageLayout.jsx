@@ -4,7 +4,7 @@ import { Outlet } from "react-router";
 const LoginPageLayout = () => {
   return (
     <>
-      <main className="container mx-auto p-4  ">
+      <main className="container-wrapper">
         <Outlet />
       </main>
       <Footer />

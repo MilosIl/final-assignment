@@ -13,7 +13,7 @@ const Select = forwardRef(
           onChange={onChange}
           name={name}
           disabled={disabled}
-          className={`w-full p-2 border rounded ${error ? "border-red-500" : "border-gray-300"}`}
+          className={`w-full p-2 border  rounded ${error ? "border-red-500" : "border-gray-300"}`}
           {...props}
         >
           {placeholder && (
@@ -22,7 +22,7 @@ const Select = forwardRef(
             </option>
           )}
           {options.map((option, index) => (
-            <option key={index} value={option}>
+            <option key={index} value={option} className="text-slate-800">
               {option}
             </option>
           ))}

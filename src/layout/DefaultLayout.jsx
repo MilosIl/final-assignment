@@ -6,7 +6,7 @@ const DefaultLayout = () => {
   return (
     <>
       <NavbarContainer />
-      <main className="container mx-auto p-4 ">
+      <main className="container-wrapper ">
         <Outlet />
       </main>
       <Footer />

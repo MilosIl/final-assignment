@@ -4,15 +4,18 @@ import { RatingReview } from "../RatingReview";
 
 const ProductCardThumbnail = ({ title, thumbnail, price, id }) => {
   return (
-    <div className="card w-full max-w-2xs">
-      <Link
-        to={`/products/${id}`}
-        className="flex flex-col items-center justify-center"
-      >
-        <img src={thumbnail} alt={title} className="h-46 w-36" />
-        <div className="md:text-center p-4">
-          <h3 className="text-xl truncate font-bold mb-2">{title}</h3>
-          <p className="font-semibold text-medium text-lg">${price} </p>
+    <div className="card w-full max-w-xs  flex flex-col">
+      <Link to={`/products/${id}`} className="flex flex-col h-full">
+        <div className="h-[180px] flex items-center justify-center overflow-hidden">
+          <img
+            src={thumbnail}
+            alt={title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-4 flex-grow flex flex-col justify-between">
+          <h3 className="text-xl font-bold min-h-[3.5rem]">{title}</h3>
+          <p className="font-semibold text-lg mt-auto pt-2">${price}</p>
         </div>
       </Link>
     </div>
