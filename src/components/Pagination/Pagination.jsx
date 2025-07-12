@@ -11,9 +11,9 @@ const Pagination = ({
 }) => {
   return (
     <>
-      <div className="flex justify-between items-center my-8 border-t pt-4 border-t-teal-500 w-full">
+      <div className="flex justify-between items-center mt-8 mb-4 border-t pt-4 border-t-teal-500 w-full">
         <Button onClick={handlePreviousPage}>Previous</Button>
-        <div>
+        <div className="w-26">
           <span className="mr-2">Show items</span>
           <Select
             options={ITEMS_PER_PAGE}
@@ -25,7 +25,7 @@ const Pagination = ({
         </div>
         <Button onClick={handleNextPage}>Next</Button>
       </div>
-      <div className="text-center dark:text-sky-100 text-slate-800">
+      <div className="text-center text-slate-800 dark:text-sky-100">
         Page {currPage} of {maxPages}
       </div>
     </>

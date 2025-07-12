@@ -1,6 +1,6 @@
 import { Loader, ProductCardList } from "@/components";
 import { useProductsPagination } from "@/services";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { ITEMS_PER_PAGE } from "@/constants/ITEMS_PER_PAGE";
 import { PaginationContainer } from "./PaginationContainer";
 
@@ -17,19 +17,21 @@ const ProductCardListContainer = ({ searchProduct }) => {
   }
 
   return (
-    <div className="w-full flex flex-col items-center">
-      <ProductCardList data={dataProduct} />
-      {!searchProduct && (
-        <div className="mt-8 w-full">
-          <PaginationContainer
-            page={page}
-            setPage={setPage}
-            limit={limit}
-            setLimit={setLimit}
-            data={data}
-          />
-        </div>
-      )}
+    <div className="w-full flex flex-wrap justify-center items-center">
+      <Suspense fallback={<Loader />}>
+        <ProductCardList data={dataProduct} />
+        {!searchProduct && (
+          <div className="mt-8 w-full">
+            <PaginationContainer
+              page={page}
+              setPage={setPage}
+              limit={limit}
+              setLimit={setLimit}
+              data={data}
+            />
+          </div>
+        )}
+      </Suspense>
     </div>
   );
 };

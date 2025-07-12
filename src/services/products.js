@@ -10,8 +10,6 @@ const useAllProducts = () => {
   return useQuery({
     queryKey: ["products"],
     queryFn: () => getAllProducts(),
-    staleTime: 60 * 60 * 1000, // 1 hour
-    cacheTime: 24 * 60 * 60 * 1000, // 1 day
     keepPreviousData: true,
   });
 };
@@ -20,8 +18,6 @@ const useProductById = (id) => {
   return useQuery({
     queryKey: ["products", id],
     queryFn: () => getProductById(id),
-    staleTime: 60 * 60 * 1000,
-    cacheTime: 24 * 60 * 60 * 1000,
   });
 };
 
@@ -30,8 +26,6 @@ const useProductByTitle = (title) => {
     queryKey: ["products", "title", title],
     queryFn: () => getProductByTitle(title),
     enabled: !!title,
-    staleTime: 60 * 60 * 1000,
-    cacheTime: 24 * 60 * 60 * 1000,
     keepPreviousData: true,
   });
 };
@@ -40,8 +34,6 @@ const useProductsPagination = (page, limit) => {
   return useQuery({
     queryKey: ["products", page, limit],
     queryFn: () => getProductsPagination({ limit, skip: (page - 1) * limit }),
-    staleTime: 60 * 60 * 1000,
-    cacheTime: 24 * 60 * 60 * 1000,
     keepPreviousData: true,
   });
 };

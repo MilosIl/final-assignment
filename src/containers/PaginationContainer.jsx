@@ -1,21 +1,25 @@
 import { Pagination } from "@/components";
+import { useCallback } from "react";
 
 const PaginationContainer = ({ page, setPage, limit, setLimit, data }) => {
   const total = data?.total || 0;
   const maxPages = Math.ceil(total / limit);
 
-  const handleNextPage = () => {
+  const handleNextPage = useCallback(() => {
     setPage((prev) => Math.min(prev + 1, maxPages));
-  };
+  }, [maxPages, setPage]);
 
-  const handlePreviousPage = () => {
+  const handlePreviousPage = useCallback(() => {
     setPage((prev) => Math.max(prev - 1, 1));
-  };
+  }, [setPage]);
 
-  const handleItemsPerPage = (newLimit) => {
-    setLimit(Number(newLimit));
-    setPage(1);
-  };
+  const handleItemsPerPage = useCallback(
+    (newLimit) => {
+      setLimit(Number(newLimit));
+      setPage(1);
+    },
+    [setLimit, setPage]
+  );
 
   return (
     <Pagination

@@ -14,7 +14,7 @@ const LoginForm = ({
     <>
       <form
         onSubmit={onSubmit}
-        className="flex flex-col gap-5 bg-sky-50 p-6 rounded-lg shadow-md  w-full max-w-md "
+        className="flex flex-col gap-5 dark:bg-slate-800 bg-sky-50 p-6 rounded-lg shadow-md w-full max-w-md "
       >
         <Input
           {...register("username")}

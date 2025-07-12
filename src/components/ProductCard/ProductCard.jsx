@@ -4,13 +4,14 @@ import { RatingReview } from "../RatingReview";
 
 const ProductCardThumbnail = ({ title, thumbnail, price, id }) => {
   return (
-    <div className="card w-full max-w-xs  flex flex-col">
+    <div className="card">
       <Link to={`/products/${id}`} className="flex flex-col h-full">
-        <div className="h-[180px] flex items-center justify-center overflow-hidden">
+        <div className="h-[180px]  flex items-center justify-center overflow-hidden">
           <img
             src={thumbnail}
             alt={title}
             className="w-full h-full object-contain"
+            loading="lazy"
           />
         </div>
         <div className="p-4 flex-grow flex flex-col justify-between">
@@ -34,8 +35,13 @@ const ProductCard = ({
   return (
     <div className="card">
       <div id={id} className="flex gap-4 ">
-        <div className="md:w-1/4">
-          <img src={Array.isArray(images) ? images[0] : images} alt={title} />
+        <div>
+          <img
+            loading="lazy"
+            src={Array.isArray(images) ? images[0] : images}
+            alt={title}
+            className="w-full h-full object-contain"
+          />
         </div>
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-bold mb-3">{title}</h1>

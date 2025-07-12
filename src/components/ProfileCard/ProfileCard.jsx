@@ -1,4 +1,6 @@
-const ProfileCard = ({ image, email, firstName, lastName, username }) => {
+import { memo } from "react";
+
+const ProfileCard = memo(({ image, email, firstName, lastName, username }) => {
   return (
     <div className="border-2 border-teal-500 p-4 rounded-lg bg-sky-50 dark:bg-slate-800">
       <div className="flex items-center flex-col justify-center gap-4 mb-4">
@@ -7,6 +9,7 @@ const ProfileCard = ({ image, email, firstName, lastName, username }) => {
             src={image}
             alt="avatar-image"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
         <p className="uppercase font-medium text-2xl text-teal-500">
@@ -21,6 +24,6 @@ const ProfileCard = ({ image, email, firstName, lastName, username }) => {
       </div>
     </div>
   );
-};
+});
 
 export { ProfileCard };
