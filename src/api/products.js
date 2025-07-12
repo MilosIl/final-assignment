@@ -24,4 +24,23 @@ const getProductById = async (id) => {
   }
 };
 
-export { getAllProducts, getProductById };
+const getProductByTitle = async (title) => {
+  try {
+    const data = await apiInstance
+      .get(`/products/search?q=${title}`)
+      .then((response) => response.data);
+
+    const filteredByTitle = data.products.filter((product) =>
+      product.title.toLowerCase().includes(title.toLowerCase())
+    );
+
+    return {
+      products: filteredByTitle,
+    };
+  } catch (error) {
+    console.log("error fetching product by title", error);
+    throw new Error(error);
+  }
+};
+
+export { getAllProducts, getProductById, getProductByTitle };

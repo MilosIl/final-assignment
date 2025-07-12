@@ -1,14 +1,8 @@
 import { IconSearch } from "@/assets";
-import { Input } from "@/components";
+import { Input, Loader } from "@/components";
 import { ProductCardListContainer } from "@/containers";
 
-import { useState } from "react";
-const HomePage = () => {
-  const [search, setSearch] = useState("");
-  const handleSearchChange = (e) => {
-    setSearch(e.target.value);
-  };
-  console.log(search);
+const HomePage = ({ search, isLoading, data, onChangeSearch }) => {
   return (
     <>
       <h1 className="text-3xl font-bold mb-8 text-center">
@@ -20,10 +14,15 @@ const HomePage = () => {
         placeholder="Product name..."
         label="Search for product by name"
         className="indent-8 pl-8"
-        onChange={handleSearchChange}
+        onChange={onChangeSearch}
+        value={search}
       />
       <div className="flex mt-8 gap-4 justify-center items-center flex-wrap">
-        <ProductCardListContainer />
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ProductCardListContainer searchProduct={data} />
+        )}
       </div>
     </>
   );

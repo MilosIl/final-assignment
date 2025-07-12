@@ -1,12 +1,7 @@
 import { DefaultLayout, LoginPageLayout } from "@/layout";
-import {
-  HomePage,
-  LoginPage,
-  NotFound,
-  ProfilePage,
-  ProductPage,
-} from "@/pages";
+import { LoginPage, NotFound, ProfilePage, ProductPage } from "@/pages";
 import { ProtectedRoute } from "./ProtectedRoute";
+import { HomePageContainer } from "@/containers";
 
 const AppRouter = [
   {
@@ -16,7 +11,7 @@ const AppRouter = [
       </ProtectedRoute>
     ),
     children: [
-      { path: "/", element: <HomePage /> },
+      { path: "/", element: <HomePageContainer /> },
       {
         path: "/products/:id",
         element: <ProductPage />,
