@@ -1,12 +1,6 @@
-import { useAllProducts } from "@/services";
 import { ProductCardThumbnail } from "../ProductCard";
-import { Loader } from "../Loader/Loader";
 
-const ProductCardList = () => {
-  const { data, isLoading } = useAllProducts();
-  if (isLoading) {
-    return <Loader />;
-  }
+const ProductCardList = ({ data }) => {
   return (
     <>
       {data?.products?.map((product) => {

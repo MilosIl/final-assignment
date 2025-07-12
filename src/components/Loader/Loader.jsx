@@ -1,4 +1,4 @@
-import { IconLoader } from "@/assets/icons/IconLoader";
+import { IconLoader } from "@/assets";
 
 const Loader = () => {
   return (

@@ -4,8 +4,10 @@ import { Link, useParams } from "react-router";
 
 const ProductPage = () => {
   const { id } = useParams();
-  const { data } = useProductById(id);
-
+  const { data, isLoading } = useProductById(id);
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className="mx-auto h-screen flex items-center justify-center flex-col gap-30">
       <Button className="self-start">

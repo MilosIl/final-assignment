@@ -59,7 +59,7 @@ const Navbar = ({
         <div className="relative">
           <div
             onClick={avatarClick}
-            className="flex items-center gap-2 cursor-pointer hover:bg-gray-100 p-2 rounded"
+            className="flex items-center gap-2 cursor-pointer hover:bg-slate-100 hover:text-slate-800 transition-all duration-300 ease-in-out  p-2 rounded"
           >
             <Avatar firstName={firstName} lastName={lastName} />
             <span className="text-sm font-semibold">

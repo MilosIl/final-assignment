@@ -7,3 +7,6 @@ export * from "./IconUser";
 export * from "./IconStar";
 export * from "./IconLogout";
 export * from "./IconArrowDown";
+export * from "./IconLoader";
+export * from "./IconEye";
+export * from "./IconEyeHidden";

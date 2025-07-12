@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router";
 import { z } from "zod";
+import { useState } from "react";
 
 const loginSchema = z.object({
   username: z.string().min(1, "Username is requered"),
@@ -13,6 +14,7 @@ const loginSchema = z.object({
 });
 
 const LoginFormContainer = () => {
+  const [togglePassword, setTogglePassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -34,6 +36,9 @@ const LoginFormContainer = () => {
       console.error("Login failed:", error);
     }
   };
+  const togglePasswordVisibility = () => {
+    setTogglePassword(!togglePassword);
+  };
 
   return (
     <LoginForm
@@ -42,6 +47,8 @@ const LoginFormContainer = () => {
       errors={errors}
       loading={loading}
       error={error}
+      passwordVisible={togglePassword} // Pass the state
+      togglePassword={togglePasswordVisibility}
     />
   );
 };

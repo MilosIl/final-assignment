@@ -10,7 +10,7 @@ const ProductCardThumbnail = ({ title, thumbnail, price, id }) => {
           <img
             src={thumbnail}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         </div>
         <div className="p-4 flex-grow flex flex-col justify-between">
