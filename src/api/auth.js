@@ -9,8 +9,6 @@ const login = async (username, password) => {
 
     if (response.data) {
       localStorage.setItem("authToken", response.data.accessToken);
-      localStorage.setItem("user", JSON.stringify(response.data));
-
       return {
         success: true,
         user: response.data,
@@ -27,16 +25,37 @@ const login = async (username, password) => {
 
 const logout = () => {
   localStorage.removeItem("authToken");
-  localStorage.removeItem("user");
 };
 
 const isLoggedIn = () => {
   return !!localStorage.getItem("authToken");
 };
 
-const getUser = () => {
-  const user = localStorage.getItem("user");
-  return user ? JSON.parse(user) : null;
+const getCurrentUser = async () => {
+  try {
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      return { success: false, error: "No auth token" };
+    }
+    const response = await apiInstance.get("/auth/me", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (response.data) {
+      return {
+        success: true,
+        user: response.data,
+      };
+    }
+  } catch (error) {
+    console.error("Error fetching current user:", error);
+    return {
+      success: false,
+      error: error.response?.data?.message || "Failed to get user data",
+    };
+  }
 };
 
-export { login, logout, isLoggedIn, getUser };
+export { login, logout, isLoggedIn, getCurrentUser };
