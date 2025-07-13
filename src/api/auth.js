@@ -34,9 +34,13 @@ const isLoggedIn = () => {
   return !!localStorage.getItem("authToken");
 };
 
-const getUser = () => {
-  const user = localStorage.getItem("user");
-  return user ? JSON.parse(user) : null;
+const getUser = async () => {
+  // const user = localStorage.getItem("user");
+  // return user ? JSON.parse(user) : null;
+
+  const response = await apiInstance.get("/auth/me").then((res) => res.data);
+
+  return JSON.parse(response);
 };
 
 export { login, logout, isLoggedIn, getUser };

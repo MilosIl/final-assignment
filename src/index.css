@@ -14,3 +14,35 @@ body {
 .container-wrapper {
   @apply container mx-auto md:p-4 p-2;
 }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  @apply bg-sky-50 text-slate-900;
+}
+
+.dark body {
+  @apply bg-slate-700 text-sky-100;
+}
+.dark nav {
+  @apply bg-slate-700;
+}
+.dark footer {
+  @apply bg-slate-800 text-sky-100;
+}
+.dark form {
+  @apply bg-slate-800 text-sky-100;
+}
+
+.card {
+  @apply p-2 md:p-4 border flex flex-col rounded-md shadow-md w-sm m-1 bg-sky-100 border-sky-200 transition-all duration-300 ease-in-out;
+}
+.card:hover {
+  @apply bg-sky-200 border-sky-300 shadow-sky-300;
+}
+
+.dark .card {
+  @apply bg-slate-800 border-slate-700 text-sky-50;
+}
+.dark .card:hover {
+  @apply bg-slate-700 border-slate-600 shadow-slate-600;
+}

@@ -1,24 +1,30 @@
 import { Pagination } from "@/components";
 import { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setPage as setPageAction,
+  setLimit as setLimitAction,
+} from "@/store/PaginationStore";
 
-const PaginationContainer = ({ page, setPage, limit, setLimit, data }) => {
+const PaginationContainer = ({ data }) => {
+  const dispatch = useDispatch();
+  const { page, limit } = useSelector((state) => state.pagination);
   const total = data?.total || 0;
   const maxPages = Math.ceil(total / limit);
 
   const handleNextPage = useCallback(() => {
-    setPage((prev) => Math.min(prev + 1, maxPages));
-  }, [maxPages, setPage]);
+    dispatch(setPageAction(Math.min(page + 1, maxPages)));
+  }, [dispatch, maxPages, page]);
 
   const handlePreviousPage = useCallback(() => {
-    setPage((prev) => Math.max(prev - 1, 1));
-  }, [setPage]);
+    dispatch(setPageAction(Math.max(page - 1, 1)));
+  }, [dispatch, page]);
 
   const handleItemsPerPage = useCallback(
     (newLimit) => {
-      setLimit(Number(newLimit));
-      setPage(1);
+      dispatch(setLimitAction(Number(newLimit)));
     },
-    [setLimit, setPage]
+    [dispatch]
   );
 
   return (

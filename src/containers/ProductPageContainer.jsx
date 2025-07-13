@@ -1,0 +1,3 @@
+const ProductPageContainer = () => {};
+
+export { ProductPageContainer };

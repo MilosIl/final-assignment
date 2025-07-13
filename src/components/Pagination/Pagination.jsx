@@ -25,7 +25,7 @@ const Pagination = ({
         </div>
         <Button onClick={handleNextPage}>Next</Button>
       </div>
-      <div className="text-center text-slate-800 dark:text-sky-100">
+      <div id="" className="text-center  text-slate-900">
         Page {currPage} of {maxPages}
       </div>
     </>

@@ -21,7 +21,7 @@ const ProductPage = () => {
   return (
     <div className="mx-auto mt-40 flex items-center justify-center flex-col gap-30">
       <Button className="self-start" onClick={() => navigate(-1)}>
-        Back to Home
+        Back
       </Button>
       <ProductCard {...data} />
     </div>

@@ -14,6 +14,7 @@ const NavbarContainer = () => {
   const handleAvatarClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
   return (
     <Navbar
       mobileMenuClick={handleMobileMenuClick}

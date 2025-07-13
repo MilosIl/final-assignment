@@ -1,12 +1,11 @@
 import { Loader, ProductCardList } from "@/components";
 import { useProductsPagination } from "@/services";
-import { Suspense, useState } from "react";
-import { ITEMS_PER_PAGE } from "@/constants/ITEMS_PER_PAGE";
+import { Suspense } from "react";
 import { PaginationContainer } from "./PaginationContainer";
+import { useSelector } from "react-redux";
 
 const ProductCardListContainer = ({ searchProduct }) => {
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(ITEMS_PER_PAGE[0]);
+  const { page, limit } = useSelector((state) => state.pagination);
 
   const { data, isLoading } = useProductsPagination(page, limit);
 
@@ -22,13 +21,7 @@ const ProductCardListContainer = ({ searchProduct }) => {
         <ProductCardList data={dataProduct} />
         {!searchProduct && (
           <div className="mt-8 w-full">
-            <PaginationContainer
-              page={page}
-              setPage={setPage}
-              limit={limit}
-              setLimit={setLimit}
-              data={data}
-            />
+            <PaginationContainer page={page} limit={limit} data={data} />
           </div>
         )}
       </Suspense>

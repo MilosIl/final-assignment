@@ -8,17 +8,12 @@ const useTheme = () => {
 
   useEffect(() => {
     const root = document.documentElement;
-
     if (isDarkMode) {
       root.classList.add("dark");
       root.style.colorScheme = "dark";
-      document.body.style.backgroundColor = "#111827";
-      document.body.style.color = "#f0f9ff";
     } else {
       root.classList.remove("dark");
       root.style.colorScheme = "light";
-      document.body.style.backgroundColor = "#ffffff";
-      document.body.style.color = "#111827";
     }
   }, [isDarkMode]);
 

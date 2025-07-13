@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const getInitialState = () => {
   try {
-    const savedTheme = localStorage.getItem("dark-theme");
+    const savedTheme = localStorage.getItem("theme");
 
     if (savedTheme !== null) {
       return {
@@ -23,17 +23,6 @@ const getInitialState = () => {
     };
   } catch (error) {
     console.error("Error loading theme from localStorage:", error);
-
-    // Fallback to system theme on error
-    const systemPrefersDark =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    return {
-      isDarkMode: systemPrefersDark,
-      loading: false,
-      error: null,
-    };
   }
 };
 
@@ -43,7 +32,7 @@ const themeSlice = createSlice({
   reducers: {
     toggleTheme: (state) => {
       state.isDarkMode = !state.isDarkMode;
-      localStorage.setItem("dark-theme", JSON.stringify(state.isDarkMode));
+      localStorage.setItem("theme", JSON.stringify(state.isDarkMode));
     },
   },
 });
