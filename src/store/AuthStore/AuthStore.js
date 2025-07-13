@@ -2,26 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const getInitialState = () => {
   try {
-    const user = localStorage.getItem("user");
     const token = localStorage.getItem("authToken");
 
-    if (user && token) {
+    if (token) {
       return {
-        user: JSON.parse(user),
+        user: null,
         isUserLoggedIn: true,
-        loading: false,
-        error: null,
       };
     }
   } catch (error) {
-    console.error("Error loading user from localStorage:", error);
+    console.error("Error checking auth token:", error);
   }
 
   return {
     user: null,
     isUserLoggedIn: false,
-    loading: false,
-    error: null,
   };
 };
 
@@ -30,18 +25,18 @@ const authSlice = createSlice({
   initialState: getInitialState(),
   reducers: {
     login: (state, action) => {
-      state.loading = false;
       state.isUserLoggedIn = true;
       state.user = action.payload;
-      state.error = null;
     },
     logout: (state) => {
       state.user = null;
       state.isUserLoggedIn = false;
-      state.error = null;
+    },
+    updateUser: (state, action) => {
+      state.user = action.payload;
     },
   },
 });
 
-export const { logout, login } = authSlice.actions;
+export const { logout, login, updateUser } = authSlice.actions;
 export { authSlice };

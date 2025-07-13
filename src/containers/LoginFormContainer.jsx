@@ -47,7 +47,7 @@ const LoginFormContainer = () => {
       errors={errors}
       loading={loading}
       error={error}
-      passwordVisible={togglePassword} // Pass the state
+      passwordVisible={togglePassword}
       togglePassword={togglePasswordVisibility}
     />
   );

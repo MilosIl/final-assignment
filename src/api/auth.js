@@ -9,7 +9,6 @@ const login = async (username, password) => {
 
     if (response.data) {
       localStorage.setItem("authToken", response.data.accessToken);
-      localStorage.setItem("user", JSON.stringify(response.data));
 
       return {
         success: true,
@@ -27,20 +26,16 @@ const login = async (username, password) => {
 
 const logout = () => {
   localStorage.removeItem("authToken");
-  localStorage.removeItem("user");
-};
-
-const isLoggedIn = () => {
-  return !!localStorage.getItem("authToken");
 };
 
 const getUser = async () => {
-  // const user = localStorage.getItem("user");
-  // return user ? JSON.parse(user) : null;
-
-  const response = await apiInstance.get("/auth/me").then((res) => res.data);
-
-  return JSON.parse(response);
+  try {
+    const response = await apiInstance.get("/auth/me");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    throw error;
+  }
 };
 
-export { login, logout, isLoggedIn, getUser };
+export { login, logout, getUser };

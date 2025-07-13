@@ -1,5 +1,5 @@
 import { Footer } from "@/components";
-import { NavbarContainer } from "@/containers/NavbarContainer";
+import { NavbarContainer } from "@/containers";
 import { Outlet } from "react-router";
 
 const DefaultLayout = () => {

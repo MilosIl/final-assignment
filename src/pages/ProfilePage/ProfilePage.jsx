@@ -1,9 +1,6 @@
 import { ProfileCard } from "@/components";
-import { useAuth } from "@/hooks/useAuth";
 
-const ProfilePage = () => {
-  const { user } = useAuth();
-
+const ProfilePage = ({ user }) => {
   return (
     <div className="flex justify-center items-center py-8">
       <ProfileCard {...user} />

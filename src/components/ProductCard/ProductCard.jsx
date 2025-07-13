@@ -1,4 +1,3 @@
-import { numberWithDecimals } from "@/utils";
 import { Link } from "react-router";
 import { RatingReview } from "../RatingReview";
 
@@ -46,11 +45,9 @@ const ProductCard = ({
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-bold mb-3">{title}</h1>
           {brand ? <span className="text-lg">Brand: {brand}</span> : null}
-          <span className="font-medium text-xl">
-            ${numberWithDecimals(price, 2)}
-          </span>
+          <span className="font-medium text-xl">${price}</span>
           <span>
-            Rating: <RatingReview rating={numberWithDecimals(rating, 1)} />
+            Rating: <RatingReview rating={rating} />
           </span>
         </div>
       </div>

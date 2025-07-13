@@ -1,12 +1,7 @@
 import { Button, Loader, ProductCard } from "@/components";
-import { useProductById } from "@/services";
-import { useNavigate, useParams } from "react-router";
 
-const ProductPage = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const { data, isLoading } = useProductById(id);
-  if (isLoading) {
+const ProductPage = ({ data, loading, navigateBack }) => {
+  if (loading) {
     return <Loader />;
   }
 
@@ -20,7 +15,7 @@ const ProductPage = () => {
 
   return (
     <div className="mx-auto mt-40 flex items-center justify-center flex-col gap-30">
-      <Button className="self-start" onClick={() => navigate(-1)}>
+      <Button className="self-start" onClick={navigateBack}>
         Back
       </Button>
       <ProductCard {...data} />

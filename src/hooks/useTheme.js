@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "@/store/ThemeStore/ThemeStore";
+import { toggleTheme } from "@/store";
 import { useEffect } from "react";
 
 const useTheme = () => {

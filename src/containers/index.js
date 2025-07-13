@@ -4,3 +4,6 @@ export * from "./ToggleThemeContainer";
 export * from "./ProductCardListContainer";
 export * from "./HomePageContainer";
 export * from "./PaginationContainer";
+export * from "./ProductPageContainer";
+export * from "./ProfilePageContainer";
+export * from "./NotFoundPageContainer";
