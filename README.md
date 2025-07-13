@@ -1,12 +1,42 @@
-# React + Vite
+# MyStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MyStore is a single-page application that simulates an e-commerce platform. It offers the following features:
 
-Currently, two official plugins are available:
+- Product Browsing: View all products with pagination
+- Product Search: Search products by title
+- Product Details: View detailed product information
+- User Authentication: Login/logout functionality
+- User Profile: View user profile details
+- Theme Toggle: Switch between light and dark modes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application connects to DummyJSON API for product and user data.
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Frontend Framework: React 18
+- Build Tool: Vite
+- State Management: Redux Toolkit
+- Data Fetching: React Query
+- Routing: React Router
+- Styling: Tailwind CSS
+- Form Handling: React Hook Form with Zod validation
+- API Client: Axios
+
+## Architecture
+
+```
+src/
+├── api/              # API service calls
+├── assets/           # Images and icons
+├── components/       # UI components
+├── constants/        # Application constants
+├── containers/       # Container components (logic)
+├── hooks/            # Custom hooks
+├── layout/           # Layout components
+├── pages/            # Page components
+├── providers/        # Context providers
+├── router/           # Routing configuration
+├── services/         # Data fetching with React Query
+├── store/            # Redux store configuration
+└── utils/            # Utility functions
+```
