@@ -1,1 +1,1 @@
-export const ITEMS_PER_PAGE = [5, 10, 15, 20, 50, 100];
+export const ITEMS_PER_PAGE = [6, 12, 18, 24, 48, 96];

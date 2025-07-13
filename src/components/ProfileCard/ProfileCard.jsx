@@ -12,6 +12,9 @@ const ProfileCard = memo(({ image, email, firstName, lastName, username }) => {
             loading="lazy"
           />
         </div>
+        <p className="text-lg font-semibold text-teal-500">
+          {firstName} {lastName}
+        </p>
         <p className="uppercase font-medium text-2xl text-teal-500">
           @{username}
         </p>

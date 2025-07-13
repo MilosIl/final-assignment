@@ -7,6 +7,5 @@ export * from "./Navbar";
 export * from "./ToggleTheme";
 export * from "./LoginForm";
 export * from "./ProfileCard";
-export * from "./Avatar";
 export * from "./ProductCardList";
 export * from "./Pagination";

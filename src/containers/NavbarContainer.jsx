@@ -23,7 +23,7 @@ const NavbarContainer = () => {
       userId={user?.id}
       logout={logout}
       firstName={user?.firstName}
-      lastName={user?.lastName}
+      image={user?.image}
     />
   );
 };
